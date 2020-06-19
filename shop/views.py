@@ -1,4 +1,4 @@
-from .models import Item
+from .models import Item, CartItem
 from django.views.generic import ListView, DetailView
 
 
@@ -9,3 +9,8 @@ class ItemList(ListView):
 
 class ItemDetailView(DetailView):
     model = Item
+
+
+class CartItemCreateView(CreateView):
+    model = CartItem
+    fields = "__all__"
