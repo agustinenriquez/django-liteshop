@@ -1,2 +1,2 @@
 # django-liteshop
-django liteshop ecommerce 
+Basic django ecommerce example
