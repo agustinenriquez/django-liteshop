@@ -1,5 +1,6 @@
 from django.db import models
 from django.shortcuts import reverse
+from django.utils.text import slugify
 
 
 # Create your models here.
@@ -39,3 +40,16 @@ class CartItem(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField("auth.User", on_delete=models.CASCADE)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=50, null=True)
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
