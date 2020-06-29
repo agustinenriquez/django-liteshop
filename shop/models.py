@@ -35,3 +35,7 @@ class CartItem(models.Model):
 
     def get_absolute_url(self):
         return reverse("cartitem-detail", kwargs={"pk": self.pk})
+
+
+class Profile(models.Model):
+    user = models.OneToOneField("auth.User", on_delete=models.CASCADE)
