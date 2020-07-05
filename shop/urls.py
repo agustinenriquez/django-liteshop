@@ -3,7 +3,7 @@ from shop.views import ItemList, ItemDetailView, CartItemCreateView, CreateUser,
 
 
 urlpatterns = [
-    path("", ItemList.as_view(), name="main-shop"),
+    path("", ItemList.as_view(), name="homepage"),
     path("item/<int:pk>/", ItemDetailView.as_view(), name="item-detail"),
     path("cartitem/add/<int:pk>", CartItemCreateView.as_view(), name="cartitem-create"),
     path("cartitem/", CartItemList.as_view(), name="cartitem-list"),

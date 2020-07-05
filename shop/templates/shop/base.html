@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-3 col-sm-3"><a href="#">Django Liteshop</a></div>
+      <div class="col-md-3 col-sm-3"><a href="{% url 'homepage' %}">Django Liteshop</a></div>
       <div class="col-md-6 col-sm-6">
         <form class="form-inline" action="{% url 'search' %}" method="get">
           <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search" aria-label="Search">
