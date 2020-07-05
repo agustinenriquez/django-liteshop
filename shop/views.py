@@ -57,3 +57,12 @@ class CreateUser(CreateView):
 
     def get_success_url(self):
         return self.success_url
+
+
+class SearchView(ListView):
+    model = Item
+    template_name = "shop/search_results.html"
+
+    def get_queryset(self):
+        search_box_query = self.request.GET["q"]
+        return super().get_queryset().filter(name__contains=search_box_query)
