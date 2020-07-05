@@ -9,6 +9,7 @@ class Item(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=2)
     description = models.TextField(max_length=300, default=None, null=True)
     created_by = models.ForeignKey("auth.User", on_delete=models.CASCADE, blank=True, null=True)
+    created_date = models.DateField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
         return self.name
