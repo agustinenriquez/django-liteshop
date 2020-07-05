@@ -15,7 +15,11 @@
           <button class="btn btn-outline-success my-2 my-sm-0" name="searchbtn" type="submit">Search</button>
         </form>
       </div>
-      <div class="col-md-3 col-sm-3">About</div>
+      {% if user %}
+        <div class="col-md-3 col-sm-3"><a href="{% url 'user-profile' user.pk %}">My Profile</a></div>
+      {% else %}
+        <div class="col-md-3 col-sm-3"><a href=""></a>Register</div>
+      {% endif %}
     </div>
     {% block content %}
     {% endblock %}

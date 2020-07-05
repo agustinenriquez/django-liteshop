@@ -40,6 +40,13 @@ class CartItem(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField("auth.User", on_delete=models.CASCADE)
+    points = models.IntegerField(default=0)
+    coupon = models.CharField(max_length=50)
+    last_purchase = models.ForeignKey("Item", on_delete=models.CASCADE, null=True)
+    # card = models.ForeignKey("CreditCard", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
 
 
 class Category(models.Model):

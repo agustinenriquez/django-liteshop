@@ -66,3 +66,8 @@ class SearchView(ListView):
     def get_queryset(self):
         search_box_query = self.request.GET["q"]
         return super().get_queryset().filter(name__contains=search_box_query)
+
+
+class ProfileView(DetailView):
+    model = Profile
+    template_name = "shop/profile_detail.html"
