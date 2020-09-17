@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "django_extensions",
     "shop",
+    "pwa",
 ]
 
 MIDDLEWARE = [
@@ -111,3 +112,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = "/static/"
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, "shop/static/js", "serviceworker.js")

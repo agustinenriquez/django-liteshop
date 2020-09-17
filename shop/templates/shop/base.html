@@ -1,9 +1,13 @@
 <html lang="en" class="h-100">
+{% load pwa %}
+{% load static %}
   <head>
     <meta name="author" content="Agustín Enriquez">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <title>Pythonistas</title>
+    {% progressive_web_app_meta %}
   </head>
 <body>
   <div class="container">
@@ -16,7 +20,7 @@
         </form>
       </div>
       {% if user %}
-        <div class="col-md-3 col-sm-3"><a href="{% url 'user-profile' user.pk %}">My Profile</a></div>
+        <div class="col-md-3 col-sm-3"><a href="">My Profile</a></div>
       {% else %}
         <div class="col-md-3 col-sm-3"><a href=""></a>Register</div>
       {% endif %}
